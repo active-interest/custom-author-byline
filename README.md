@@ -1,4 +1,5 @@
 === Plugin Name ===
+
 Contributors: croakingtoad, wpmuguru
 Donate link: http://mear.is/boyscouts
 Tags: author, byline, custom author, custom author name, custom author byline
