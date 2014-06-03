@@ -1,4 +1,4 @@
-# Plugin Name
+# Custom Author Byline
 
 Contributors: croakingtoad, wpmuguru, zoul0813, michaeljstutz, active-interest
 Donate link: http://mear.is/boyscouts
