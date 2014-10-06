@@ -34,6 +34,18 @@ function custom_author_uri( $author_uri ) {
 }
 add_filter( 'author_link', 'custom_author_uri' );
 
+function custom_author_url($author_url, $user_id=false) {
+	global $post, $authordata;
+	if($post != null) {
+		$custom_author = get_post_meta($post->ID, 'author', TRUE);
+		if($custom_author) {
+			return  custom_author_uri(false);
+		}
+	}
+	return $author_url;
+}
+add_filter('get_the_author_user_url', 'custom_author_url');
+
 
 // Add custom write panel to post editor page (props to Spencer at Function http://wefunction.com/2008/10/tutorial-creating-custom-write-panels-in-wordpress/)
 $cab_new_meta_boxes =
