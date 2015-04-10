@@ -19,6 +19,7 @@ function custom_author_posts_link($author_uri) {
 			return '<a target="_blank" rel="nofollow" href="' . $custom_author_uri . '">' . $custom_author . '</a>';
 		} else { return $custom_author; }
 	}
+	return $author_uri;
 }
 add_filter('the_author_posts_link', 'custom_author_posts_link');
 
