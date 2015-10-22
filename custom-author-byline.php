@@ -27,8 +27,9 @@ add_filter('the_author_posts_link', 'custom_author_posts_link');
 function custom_author_byline( $author ) {
 	global $post;
 	$custom_author = get_post_meta($post->ID, 'author', TRUE);
-	if($custom_author)
-		return $custom_author;
+	if($custom_author) return $custom_author;
+	$user = get_user_by('id', $post->post_author);
+	if(is_super_admin($user->ID) || $user->user_login == 'webmaster') return null;
 	return $author;
 }
 add_filter('the_author','custom_author_byline');
