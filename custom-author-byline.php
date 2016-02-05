@@ -33,6 +33,7 @@ function custom_author_byline( $author ) {
 	return $author;
 }
 add_filter('the_author','custom_author_byline');
+add_filter('get_the_author_display_name', 'custom_author_byline');
 
 // Replaces the_author_link() output with your custom entry or return the logged in user if there is no custom entry
 function custom_author_uri( $author_uri ) {
