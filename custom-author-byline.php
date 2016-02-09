@@ -26,6 +26,7 @@ add_filter('the_author_posts_link', 'custom_author_posts_link');
 // Replaces the_author() output with your custom entry or return the logged in user if there is no custom entry
 function custom_author_byline( $author ) {
 	global $post;
+	if(empty($post)) return $author;
 	$custom_author = get_post_meta($post->ID, 'author', TRUE);
 	if($custom_author) return $custom_author;
 	$user = get_user_by('id', $post->post_author);
